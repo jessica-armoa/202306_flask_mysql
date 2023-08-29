@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+  {% block titulo %}New Ninja{% endblock %}
+
+  {% block contenido %}
+
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1>New Ninja</h1>
+      </div>
+      <form method="post" action="/create_ninja">
+        <div class="mb-3">
+          <label for="fname" class="form-label">Dojo:</label>
+          <select name="dojo_id" id="dojo_id">
+            {% for dojo in dojos %}
+              <option value="{{dojo.id}}">{{dojo.name}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="first_name" class="form-label">First Name:</label>
+          <input type="text" class="form-control" id="first_name" name="first_name">
+        </div>
+        <div class="mb-3">
+          <label for="last_name" class="form-label">Last Name:</label>
+          <input type="text" class="form-control" id="last_name" name="last_name">
+        </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Age:</label>
+          <input type="number" class="form-control" id="age" name="age">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+        <div class="mb-3">
+          <a class="btn btn-primary" href="/dojos">Home</a>
+        </div>
+      </form>
+    </div>
+  {% endblock %}

@@ -1,6 +1,6 @@
 # importar la función que devolverá una instancia de una conexión
 from flask_app.config.mysqlconnection import connectToMySQL
-# modelar la clase después de la tabla friend de nuestra base de datos
+# modelar la clase después de la tabla user de nuestra base de datos
 class User:
     def __init__( self , data ):
         self.id = data['id']
